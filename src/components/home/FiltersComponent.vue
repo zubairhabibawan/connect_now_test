@@ -13,6 +13,9 @@
           placeholder="Text string"
           @keydown="checkString"
         />
+        <span :class="nameInputError ? 'show-error-message' : ''" class="error-message"
+          >Only Alphabets And Numbers Are Allowed</span
+        >
       </div>
     </div>
     <div class="filter-wrapper">
@@ -24,10 +27,15 @@
             class="filter-input"
             name="rang-input"
             id="rang_input"
-            placeholder="1 - 10"
+            placeholder="01 - 09"
             :value="getSelectedFilterList.rating"
             @keydown="checkNumner"
           />
+          <span
+            :class="ratingInputError ? 'show-error-message' : ''"
+            class="error-message"
+            >Only Numbers From 01 to 09 Are Allowed</span
+          >
         </div>
       </div>
       <div class="filter-parent">
@@ -73,6 +81,12 @@ export default {
   computed: {
     ...mapGetters(["getSortData", "getFilteredGameList", "getSelectedFilterList"]),
   },
+  data() {
+    return {
+      nameInputError: false,
+      ratingInputError: false,
+    };
+  },
   mounted() {},
   methods: {
     ...mapMutations(["mutateSelectedFilter", "mutateSortData"]),
@@ -91,7 +105,7 @@ export default {
     },
     chekInput(type, value, event) {
       const patternToTest = {
-        name: /^[A-Za-z\s]+$/, // small a to capital Z
+        name: /^[A-Za-z0-9\s]+$/, // small a to capital Z
         rating: /^(?:[1-9]|10)$/, // only accept 1 to 10
       };
       if (
@@ -99,9 +113,19 @@ export default {
         value !== " " &&
         event.key !== "Backspace"
       ) {
+        if (type === "name") {
+          this.nameInputError = true;
+        } else {
+          this.ratingInputError = true;
+        }
         event.preventDefault();
         return;
       } else {
+        if (type === "name") {
+          this.nameInputError = false;
+        } else {
+          this.ratingInputError = false;
+        }
         this.dispatchActionsForFilters(type, event);
       }
     },
