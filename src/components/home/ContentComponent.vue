@@ -1,10 +1,16 @@
 <template>
   <div class="game-content-root">
-    <GameDetailComponent
-      v-for="(gameDetail, index) in getFilteredGameList"
-      :key="index"
-      :gameDetail="gameDetail"
-    ></GameDetailComponent>
+    <div class="loader-wrapper" v-if="getFilteredGameList.length === 0">
+      <img class="loader" src="@/assets/gradient-loader.gif" alt="" srcset="" />
+      Loading Video Games
+    </div>
+    <div v-else>
+      <GameDetailComponent
+        v-for="(gameDetail, index) in getFilteredGameList"
+        :key="index"
+        :gameDetail="gameDetail"
+      ></GameDetailComponent>
+    </div>
   </div>
 </template>
 <script>

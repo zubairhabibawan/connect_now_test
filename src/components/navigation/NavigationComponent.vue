@@ -19,7 +19,7 @@
         CONTACT
       </div>
       <div class="navgation-heading-link">
-        <router-link to="/about">CONTACT</router-link>
+        <router-link to="/contact">CONTACT</router-link>
       </div>
     </div>
   </div>

@@ -6,7 +6,7 @@ $text-color: #c1d1e8;
 $input-background: #182c47;
 $button-background: #5692e8;
 $Headings-labels-buttons-font-family : 'Montserrat', sans-serif;
-$body-font-family : 'Mulish', sans-serif;;
+$body-font-family : 'Mulish', sans-serif;
 
 
 body {
@@ -83,6 +83,7 @@ a{
     border:none;
     color: $headings-button-text-labels ;
     height: 25px;
+    border-radius: 5px;
     margin-top: 5px;
     width: 96%;
     padding: 5px
@@ -112,10 +113,7 @@ select option {
   font-family: $Headings-labels-buttons-font-family;
     background-color:  $input-background;
     color: $headings-button-text-labels ;
-    opacity: 0.8;
     font-size: 16px;    
-    line-height: 18px;
-    margin-top: 10px;
 }
 .select-wrapper{
     
@@ -146,6 +144,23 @@ select option {
     width: 70px;
     background-color: $button-background;
     border-radius: 2px;
+}
+.loader-wrapper{    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    color: $headings-button-text-labels;
+    font-weight: bold;
+    font-family: $Headings-labels-buttons-font-family;
+}
+.loader{
+    height: 150px;
+    width: 150px;
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
 .game-content-root{
     width: 78%;
@@ -210,6 +225,109 @@ select option {
 }
 
 
+
+
+
+
+// contact page styles 
+.contact-root{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    width: 100%;
+    font-family: $body-font-family;
+}
+.contact-parent{
+    width: 40%;
+    height: fit-content;
+    padding: 15px;
+}
+.contact-heading{
+    font-family: $Headings-labels-buttons-font-family;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+.contact-description{
+    font-size: 16px;
+    margin-top: 15px;
+    text-wrap: wrap;
+}
+.contact-form-wrapper{
+    margin-top: 50px;
+    padding: 15px;
+}
+.contact-form-title{
+    font-family: $Headings-labels-buttons-font-family;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+.contact-form-input-parent{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.contact-form-input-wrapper{
+    width: 47%;
+}
+.contact-form-input-lable{
+    font-family: $Headings-labels-buttons-font-family;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 3px;
+}
+.contact-form-input{
+    height: 30px;
+    width: 97%;
+    background-color: $input-background; 
+    border:none;
+    color: $headings-button-text-labels ;
+    border-radius: 5px;
+    padding: 5px
+}
+.contact-form-input:focus-visible{
+    outline: none;
+}
+.contact-form-text-area-wrapper{
+    margin-top: 15px;
+    width: 100%;
+}
+.contact-form-text-area{
+    width: 98%;
+    height: 150px;
+    resize: none;
+    border-radius: 5px;
+    background-color: $input-background; 
+    border:none;
+    color: $headings-button-text-labels ;
+    padding: 5px
+}
+.contact-form-text-area:focus-visible{
+    outline: none;
+}
+.contact-form-submit-button-wrapper{
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.contact-form-submit-button{
+    font-family: $Headings-labels-buttons-font-family;
+    width: 75px;
+    height: 27px;
+    border-radius: 3px;
+    border: none;
+    background-color: $button-background;
+    color: $headings-button-text-labels;
+}
+.mendatory-mark{
+    color: $button-background;
+}
+
+
+
 @media (max-width: 1000px) { /* Adjust the breakpoint to your preferred mobile width */
     .navigation-wrapper {
         flex-direction: column; /* Change to column on mobile view */
@@ -236,6 +354,22 @@ select option {
     }
     .game-content-root{
         width: 100%;
+    }
+    .contact-form-input-parent{
+        flex-direction: column;
+    }
+    .contact-form-input-wrapper{
+        width: 100%;
+    margin-bottom: 15px;
+    }
+    .contact-form-text-area-wrapper{
+        margin-top: 0px;
+    }
+    .contact-form-submit-button{
+        width: 100%;
+    }
+    .contact-form-text-area{
+        width: 97%;
     }
     
 }

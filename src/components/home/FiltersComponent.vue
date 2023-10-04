@@ -42,7 +42,13 @@
             />
             <img v-else src="@/assets/arrow_down.png" alt="" srcset="" />
           </div>
-          <select class="filter-input" name="cars" id="cars" @change="onChangeSelection">
+          <select
+            class="filter-input"
+            name="cars"
+            id="cars"
+            :value="getSortData.key"
+            @change="onChangeSelection"
+          >
             <option
               v-for="(option, index) in getSortData.sortOptionList"
               :key="index"
@@ -112,6 +118,7 @@ export default {
     },
     clearFilters() {
       this.mutateSelectedFilter({ name: "", rating: "" });
+      this.mutateSortData({ key: "first_release_date", direction: "dsc" });
       this.applyFiltersOnGameList().then(() => {});
     },
   },

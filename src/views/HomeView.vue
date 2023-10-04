@@ -13,10 +13,7 @@ export default {
     HomeComponent,
   },
   mounted() {
-    this.mutateDataLoadingStatus(true);
-    this.requestAPIForGameList().then(() => {
-      this.mutateDataLoadingStatus(false);
-    });
+    this.requestAPIForGameList().then(() => {});
   },
   methods: {
     ...mapMutations(["mutateDataLoadingStatus"]),

@@ -3,7 +3,7 @@
   <router-view />
 </template>
 <script>
-import NavigationCompnent from "./components/navigation/NavigationCompnent.vue";
+import NavigationCompnent from "./components/navigation/NavigationComponent.vue";
 export default {
   name: "AppRoot",
   props: {},

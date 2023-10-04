@@ -26,7 +26,6 @@ export default createStore({
       },]
     },
     
-    isDataLoading:false,
     APIUrlToGetGameList:'http://public.connectnow.org.uk/applicant-test/'
   },
   getters: {
@@ -35,9 +34,6 @@ export default createStore({
     },
     getSelectedFilterList(state){
       return state.selectedFilters
-    },
-    getDataLoadingStatus(state){
-      return state.isDataLoading
     },
     getSortData(state){
       return state.sortData
@@ -52,9 +48,6 @@ export default createStore({
     },
     mutateSelectedFilter(state,data){
       Object.assign(state.selectedFilters,data)
-    },
-    mutateDataLoadingStatus(state,status){
-      state.isDataLoading=status
     },
     mutateSortData(state,data){
       Object.assign(state.sortData,data)
