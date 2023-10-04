@@ -9,6 +9,7 @@
           name="name-input"
           class="filter-input"
           id="name_input"
+          :value="getSelectedFilterList.name"
           placeholder="Text string"
           @keydown="checkString"
         />
@@ -24,6 +25,7 @@
             name="rang-input"
             id="rang_input"
             placeholder="1 - 10"
+            :value="getSelectedFilterList.rating"
             @keydown="checkNumner"
           />
         </div>
@@ -52,7 +54,7 @@
         </div>
       </div>
       <div class="filter-button-wrapper">
-        <button class="filter-clear-button">Clear</button>
+        <button class="filter-clear-button" @click="clearFilters">Clear</button>
       </div>
     </div>
   </div>
@@ -63,7 +65,7 @@ import _ from "lodash";
 export default {
   name: "FilterComponent",
   computed: {
-    ...mapGetters(["getSortData", "getFilteredGameList"]),
+    ...mapGetters(["getSortData", "getFilteredGameList", "getSelectedFilterList"]),
   },
   mounted() {},
   methods: {
@@ -81,28 +83,36 @@ export default {
       let value = event.key;
       this.chekInput("rating", value, event);
     },
-    chekInput: _.debounce(function (type, value, event) {
+    chekInput(type, value, event) {
       const patternToTest = {
         name: /^[A-Za-z\s]+$/, // small a to capital Z
         rating: /^(?:[1-9]|10)$/, // only accept 1 to 10
       };
-
       if (
         !patternToTest[type].test(value) &&
         value !== " " &&
         event.key !== "Backspace"
       ) {
         event.preventDefault();
+        return;
       } else {
-        let selectedFilters = {};
-        selectedFilters[type] = event.target.value.toString().toLowerCase();
-        this.mutateSelectedFilter(selectedFilters);
-        this.applyFiltersOnGameList().then(() => {});
+        this.dispatchActionsForFilters(type, event);
       }
+    },
+    dispatchActionsForFilters: _.debounce(function (type, event) {
+      let selectedFilters = {};
+      selectedFilters[type] = event.target.value.toString().toLowerCase();
+      this.mutateSelectedFilter(selectedFilters);
+      this.applyFiltersOnGameList().then(() => {});
     }, 500),
+
     onChangeSelection(event) {
       this.mutateSortData({ key: event.target.value });
       this.sortFilteredGameList(this.getFilteredGameList);
+    },
+    clearFilters() {
+      this.mutateSelectedFilter({ name: "", rating: "" });
+      this.applyFiltersOnGameList().then(() => {});
     },
   },
 };

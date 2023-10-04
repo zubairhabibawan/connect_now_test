@@ -66,7 +66,6 @@ export default createStore({
       .then(function (response) {
         context.commit('mutateGameList',response.data)
         context.commit('mutateFilteredGameList',response.data)
-        console.log('Data received:', response.data);
       })
       .catch(function (error) {
         console.error('Error:', error);
@@ -81,11 +80,11 @@ export default createStore({
         let name = game.name.toLowerCase()
         let rating = Math.floor(game.rating / 10).toString()
         if (selectedFilters.name && selectedFilters.rating) {
-          return name.includes(selectedFilters.name) && rating === selectedFilters.rating;
+          return name.includes(selectedFilters.name) && rating >= selectedFilters.rating;
         } else if (selectedFilters.name) {
           return name.includes(selectedFilters.name);
         } else if (selectedFilters.rating) {
-          return rating === selectedFilters.rating;
+          return rating >= selectedFilters.rating;
         } else{
           return game
         }
@@ -94,7 +93,6 @@ export default createStore({
     },
     sortFilteredGameList(context,filteredList=[]){
       const {sortData} = context.state
-      console.log({sortData})
       const sortedList = filteredList.sort((a, b) => {
         if (sortData.direction === 'asc') {
           if (sortData.key === 'name') {

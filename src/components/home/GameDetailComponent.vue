@@ -5,7 +5,8 @@
         <div class="game-heading-wrapper">
           <div class="game-title">{{ gameDetail?.name || "Game Title" }}</div>
           <div class="game-date">
-            {{ gameDetail?.first_release_date || "Released Date" }}
+            Release Date :
+            {{ formateData(gameDetail?.first_release_date) || "Released Date" }}
           </div>
         </div>
         <div class="game-detail">
@@ -35,6 +36,16 @@ export default {
   methods: {
     ...mapMutations(["mutateDataLoadingStatus"]),
     ...mapActions(["requestAPIForGameList"]),
+    formateData(timestamp) {
+      const date = new Date(timestamp);
+      // Get day, month, and year
+      const day = date.getDate().toString().padStart(2, "0");
+      const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Month is zero-based
+      const year = date.getFullYear();
+      // Format the date as DD/MM/YYYY
+      const formattedDate = `${day}/${month}/${year}`;
+      return formattedDate;
+    },
   },
 };
 </script>

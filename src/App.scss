@@ -1,15 +1,27 @@
+// Variables
+$body-background : linear-gradient(to bottom, #081221, #03080f);
+$card-background : #0e1a2b;
+$headings-button-text-labels : #ffffff;
+$text-color: #c1d1e8;
+$input-background: #182c47;
+$button-background: #5692e8;
+$Headings-labels-buttons-font-family : 'Montserrat', sans-serif;
+$body-font-family : 'Mulish', sans-serif;;
+
+
 body {
-  background: linear-gradient(to bottom, #081221, #03080f);
+  font-family: $body-font-family;    
+  background: $body-background;
   background-repeat: no-repeat;
   padding: 60px;
-  color: #c1d1e8 ;
+  color: $text-color ;
   
   }
 body::-webkit-scrollbar {
     width: 0px;
 }
 .card-background{
-    background-color: #0e1a2b 
+    background-color: $card-background 
 }
 
 .home-root{
@@ -32,13 +44,16 @@ body::-webkit-scrollbar {
     flex-direction: column;
 }
 .navgation-heading-lable{
+  font-family: $Headings-labels-buttons-font-family;
     font-size: 55px;
     opacity: 0.3;
     height: 63px;
-    color: #ffffff ;
+    color: $headings-button-text-labels ;
     visibility: visible;
 }
 .navgation-heading-link{
+    
+  font-family: $Headings-labels-buttons-font-family;
     padding-left: 35px;
     font-size: 30px;
     margin-top: -35px;
@@ -46,7 +61,8 @@ body::-webkit-scrollbar {
 }
 a{
     text-decoration: none;
-    color: #ffffff ;
+    color: $headings-button-text-labels ;
+  font-family: $Headings-labels-buttons-font-family;
 }
 .hide-lable{
     visibility: hidden !important;
@@ -57,15 +73,15 @@ a{
     height: fit-content;
     width: 20%;
     margin-right: 10px;
-    color: #ffffff ;
+    color: $headings-button-text-labels ;
 }
 .filter-parent{
     margin-top: 30px;
 }
 .filter-input{
-    background-color: #182c47; 
+    background-color: $input-background; 
     border:none;
-    color: #ffffff ;
+    color: $headings-button-text-labels ;
     height: 25px;
     margin-top: 5px;
     width: 96%;
@@ -78,30 +94,31 @@ a{
     color: #ffffff94 ;
 }
 .filter-button-wrapper{
+    
+  font-family: $Headings-labels-buttons-font-family;
     margin-top: 110px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 select{
+    
+  font-family: $Headings-labels-buttons-font-family;
     height: 40px !important;
     width: 87% !important;
 }
 select option {
-    background-color:  #182c47;
-    color: #ffffff ;
+    
+  font-family: $Headings-labels-buttons-font-family;
+    background-color:  $input-background;
+    color: $headings-button-text-labels ;
     opacity: 0.8;
-    padding: 10px;
+    font-size: 16px;    
+    line-height: 18px;
+    margin-top: 10px;
 }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
 .select-wrapper{
+    
     display: flex;
     width: 98%;
     justify-content: space-between;
@@ -112,7 +129,7 @@ select option {
     width: 40px;
     display: flex;
     justify-content: center;
-    background: #5692e8;
+    background: $button-background;
     align-items: center;
     cursor: pointer;
     img{
@@ -121,11 +138,13 @@ select option {
     }
 }
 .filter-clear-button{
-    border: none;
-    color: #ffffff ;
+    
+  font-family: $Headings-labels-buttons-font-family;
+  border: none;
+    color: $headings-button-text-labels ;
     height: 28px;
     width: 70px;
-    background-color: #5692e8;
+    background-color: $button-background;
     border-radius: 2px;
 }
 .game-content-root{
@@ -152,12 +171,15 @@ select option {
     padding: 15px;
 }
 .game-heading-wrapper{
-    color: #c1d1e8;
+  
+    color: $text-color;
 }
 .game-title{
+  
+    font-family: $Headings-labels-buttons-font-family;
     font-size: 22px;
     font-weight: bold;
-    color: #ffffff ;
+    color: $headings-button-text-labels ;
 }
 .game-date{
     font-size: 16px;
@@ -173,8 +195,10 @@ select option {
     align-items: center;
     
 }.game-content-number{
-    color: #ffffff ;
-    background:#5692e8;
+    
+  font-family: $Headings-labels-buttons-font-family;
+    color: $headings-button-text-labels ;
+    background:$button-background;
     height: 35px;
     width: 35px;
     border-radius: 50%;
