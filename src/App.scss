@@ -24,6 +24,8 @@ body::-webkit-scrollbar {
     background-color: $card-background 
 }
 
+// Home Page
+
 .home-root{
     position: relative;
 }
@@ -338,10 +340,10 @@ select option {
 }
 
 
-
-@media (max-width: 1000px) { /* Adjust the breakpoint to your preferred mobile width */
+// Tablet View
+@media (max-width: 1024px) { 
     .navigation-wrapper {
-        flex-direction: column; /* Change to column on mobile view */
+        flex-direction: column; 
     }
     .home-view-wrapper{
         flex-direction: column;
@@ -353,14 +355,13 @@ select option {
     .filter-wrapper{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 97%;
     .filter-parent{
         width:40%
     }
     .filter-button-wrapper{
         width: 5%;
-        margin-top: 50px;
+        margin-top: 40px;
     }
     }
     .game-content-root{
@@ -384,7 +385,8 @@ select option {
     }
     
 }
-@media (max-width: 700px) { /* Adjust the breakpoint to your preferred mobile width */
+// Mobile View
+@media (max-width: 768px) {
     .filter-wrapper{
     flex-direction: column;
     align-items: flex-start;
