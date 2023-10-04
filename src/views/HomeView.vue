@@ -1,17 +1,26 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="home-root">
+    <HomeComponent />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import HomeComponent from "@/components/home/Index.vue";
+import { mapActions, mapMutations } from "vuex";
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    HomeComponent,
+  },
+  mounted() {
+    this.mutateDataLoadingStatus(true);
+    this.requestAPIForGameList().then(() => {
+      this.mutateDataLoadingStatus(false);
+    });
+  },
+  methods: {
+    ...mapMutations(["mutateDataLoadingStatus"]),
+    ...mapActions(["requestAPIForGameList"]),
   },
 };
 </script>
