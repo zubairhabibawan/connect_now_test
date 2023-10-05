@@ -1,0 +1,420 @@
+// Variables
+$body-background : linear-gradient(to bottom, #081221, #03080f);
+$card-background : #0e1a2b;
+$headings-button-text-labels : #ffffff;
+$text-color: #c1d1e8;
+$input-background: #182c47;
+$button-background: #5692e8;
+$Headings-labels-buttons-font-family : 'Montserrat', sans-serif;
+$body-font-family : 'Mulish', sans-serif;
+
+
+body {
+  font-family: $body-font-family;    
+  background: $body-background;
+  background-repeat: no-repeat;
+  padding: 60px;
+  color: $text-color ;
+  
+  }
+body::-webkit-scrollbar {
+    width: 0px;
+}
+.card-background{
+    background-color: $card-background 
+}
+
+// Home Page
+
+.home-root{
+    position: relative;
+}
+.home-view-wrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+.navigation-wrapper{
+    display: flex;
+}
+.navgation-heading-wrapper{
+    width: 280px;
+    display: flex;
+    
+    flex-direction: column;
+}
+.navgation-heading-lable{
+  font-family: $Headings-labels-buttons-font-family;
+    font-size: 55px;
+    opacity: 0.3;
+    height: 63px;
+    color: $headings-button-text-labels ;
+    visibility: visible;
+}
+.navgation-heading-link{
+    
+  font-family: $Headings-labels-buttons-font-family;
+    padding-left: 35px;
+    font-size: 30px;
+    margin-top: -35px;
+    z-index:900
+}
+a{
+    text-decoration: none;
+    color: $headings-button-text-labels ;
+  font-family: $Headings-labels-buttons-font-family;
+}
+.hide-lable{
+    visibility: hidden !important;
+}
+
+.filter-root{
+    padding: 15px;
+    height: fit-content;
+    width: 20%;
+    margin-right: 10px;
+    color: $headings-button-text-labels ;
+}
+.filter-heading{
+    margin-bottom: 30px;
+}
+.filter-parent{
+    margin-top: 10px;
+}
+.filter-input{
+    background-color: $input-background; 
+    border:none;
+    color: $headings-button-text-labels ;
+    height: 25px;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 96%;
+    padding: 5px
+}
+.filter-input:focus-visible{
+    outline: none;
+}
+::placeholder {
+    color: #ffffff94 ;
+}
+.error-message{
+    visibility: hidden;
+    font-size: 12px;
+    color: red;
+}
+.show-error-message{
+    visibility: visible;
+}
+.filter-button-wrapper{
+    
+  font-family: $Headings-labels-buttons-font-family;
+    margin-top: 110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+select{
+    
+  font-family: $Headings-labels-buttons-font-family;
+    height: 40px !important;
+    width: 87% !important;
+}
+select option {
+    
+  font-family: $Headings-labels-buttons-font-family;
+    background-color:  $input-background;
+    color: $headings-button-text-labels ;
+    font-size: 16px;    
+}
+.select-wrapper{
+    
+    display: flex;
+    width: 98%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.arrow-icon{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    background: $button-background;
+    align-items: center;
+    cursor: pointer;
+    img{
+        height: 25px;
+        width: 23px;
+    }
+}
+.filter-clear-button{
+    
+  font-family: $Headings-labels-buttons-font-family;
+  border: none;
+    color: $headings-button-text-labels ;
+    height: 28px;
+    width: 70px;
+    background-color: $button-background;
+    border-radius: 2px;
+}
+.loader-wrapper{    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    color: $headings-button-text-labels;
+    font-weight: bold;
+    font-family: $Headings-labels-buttons-font-family;
+}
+.loader{
+    height: 150px;
+    width: 150px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+.game-content-root{
+    width: 78%;
+    height: 800px;
+    position: relative;
+    overflow-y: scroll;
+}
+.game-content-root::-webkit-scrollbar {
+    width: 0px;
+}
+.game-content-parent{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.game-content-wrapper{
+    background-color: black;
+    border-radius: 2px;
+    padding-left: 80px;
+    display: flex;
+}
+.game-content-detail-wrapper{
+    width: 90%;
+    padding: 15px;
+}
+.game-heading-wrapper{
+  
+    color: $text-color;
+}
+.game-title{
+  
+    font-family: $Headings-labels-buttons-font-family;
+    font-size: 22px;
+    font-weight: bold;
+    color: $headings-button-text-labels ;
+}
+.game-date{
+    font-size: 16px;
+}
+.game-detail{
+    margin-top: 10px;
+    font-size: 14px;
+}
+.game-content-number-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 10%;
+    align-items: center;
+    
+}.game-content-number{
+    
+  font-family: $Headings-labels-buttons-font-family;
+    color: $headings-button-text-labels ;
+    background:$button-background;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+// contact page styles 
+.contact-root{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    width: 100%;
+    font-family: $body-font-family;
+}
+.contact-parent{
+    width: 40%;
+    height: fit-content;
+    padding: 15px;
+}
+.contact-heading{
+    font-family: $Headings-labels-buttons-font-family;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+.contact-description{
+    font-size: 16px;
+    margin-top: 15px;
+    text-wrap: wrap;
+}
+.contact-form-wrapper{
+    margin-top: 50px;
+    padding: 15px;
+}
+.contact-form-title{
+    font-family: $Headings-labels-buttons-font-family;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+.contact-form-input-parent{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.contact-form-input-wrapper{
+    width: 47%;
+}
+.contact-form-input-lable{
+    font-family: $Headings-labels-buttons-font-family;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 3px;
+}
+.contact-form-input{
+    height: 30px;
+    width: 97%;
+    background-color: $input-background; 
+    border:none;
+    color: $headings-button-text-labels ;
+    border-radius: 5px;
+    padding: 5px
+}
+.contact-form-input:focus-visible{
+    outline: none;
+}
+.contact-form-text-area-wrapper{
+    margin-top: 15px;
+    width: 100%;
+}
+.contact-form-text-area{
+    width: 98%;
+    height: 150px;
+    resize: none;
+    border-radius: 5px;
+    background-color: $input-background; 
+    border:none;
+    color: $headings-button-text-labels ;
+    padding: 5px
+}
+.contact-form-text-area:focus-visible{
+    outline: none;
+}
+.contact-form-submit-button-wrapper{
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.contact-form-submit-button{
+    font-family: $Headings-labels-buttons-font-family;
+    width: 75px;
+    height: 27px;
+    border-radius: 3px;
+    border: none;
+    background-color: $button-background;
+    color: $headings-button-text-labels;
+}
+.mendatory-mark{
+    color: $button-background;
+}
+
+
+// Tablet View
+@media (max-width: 1024px) { 
+    .navigation-wrapper {
+        flex-direction: column; 
+    }
+    .home-view-wrapper{
+        flex-direction: column;
+    }
+    .filter-root{
+    width: 97%;
+    margin-bottom: 60px;
+    }
+    .filter-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    .filter-parent{
+        width:40%
+    }
+    .filter-button-wrapper{
+        width: 5%;
+        margin-top: 40px;
+    }
+    }
+    .game-content-root{
+        width: 100%;
+    }
+    .contact-form-input-parent{
+        flex-direction: column;
+    }
+    .contact-form-input-wrapper{
+        width: 100%;
+    margin-bottom: 15px;
+    }
+    .contact-form-text-area-wrapper{
+        margin-top: 0px;
+    }
+    .contact-form-submit-button{
+        width: 100%;
+    }
+    .contact-form-text-area{
+        width: 97%;
+    }
+    
+}
+// Mobile View
+@media (max-width: 768px) {
+    .filter-wrapper{
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    .filter-parent{
+        width:100%
+    }
+    .filter-button-wrapper{
+        width: 97%;
+        margin-top: 50px;
+        .filter-clear-button{
+            width: 100%;
+        }
+    }
+    }
+    .game-content-wrapper{
+        flex-direction: column-reverse;
+        align-items: end;
+    }
+    .game-content-detail-wrapper{
+        width: 110%;
+        padding: 16px;
+        margin-top: 50px;
+    }
+    .game-content-number-wrapper{
+        margin-top: 10px;
+    background: transparent;
+    margin-right: 5px;
+    }
+    
+}
